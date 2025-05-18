@@ -5,6 +5,18 @@
   "references": [
     {
       "path": "./apps/shell"
+    },
+    {
+      "path": "./apps/signin"
+    },
+    {
+      "path": "./apps/signup"
+    },
+    {
+      "path": "./apps/ticketlist"
+    },
+    {
+      "path": "./apps/ticketcreate"
     }
   ]
 }

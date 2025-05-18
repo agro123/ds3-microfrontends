@@ -16,6 +16,13 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["development"]
+    "customConditions": ["development"],
+    "paths": {
+      "signin/Module": ["apps/signin/src/remote-entry.ts"],
+      "signup/Module": ["apps/signup/src/remote-entry.ts"],
+      "ticketcreate/Module": ["apps/ticketcreate/src/remote-entry.ts"],
+      "ticketlist/Module": ["apps/ticketlist/src/remote-entry.ts"]
+    },
+    "baseUrl": "."
   }
 }

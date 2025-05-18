@@ -4,12 +4,22 @@
   "references": [
     {
       "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "../signin"
+    },
+    {
+      "path": "../signup"
+    },
+    {
+      "path": "../ticketlist"
+    },
+    {
+      "path": "../ticketcreate"
     }
   ],
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "moduleResolution": "bundler",
-    "types": ["@react-router/node"]
-  }
+  "extends": "../../tsconfig.base.json"
 }
