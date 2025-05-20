@@ -4,7 +4,6 @@
   --first-color: black;
   --second-color: white;
   --third-color: rgb(200, 35, 224);
-  --non-profile: rgb(202, 207, 210);
 }
 
 * {
@@ -27,9 +26,8 @@
   padding: 1rem;
   gap: 1rem;
   flex-wrap: wrap;
-  color: var(--second-color);
-  width: 80%;
-  margin: 0 auto;
+  /* color: var(--second-color); */
+  /* background-color: aquamarine; */
 }
 
 .nav_user button,
@@ -47,18 +45,6 @@
   margin: auto 0;
 }
 
-.nav_user span, .nav_search span{
-    background-color: transparent;
-}
-
-.signOut_icon{
-    background-color: transparent;
-}
-
-.faPlus_icon{
-    background-color: transparent;
-}
-
 .search_wrapper {
   position: relative;
   display: flex;
@@ -68,39 +54,34 @@
 .search_wrapper input {
   padding: 8px 8px 8px 40px;
   border-radius: 5px;
-  border: 1px solid var(--second-color);
+  border: 1px solid var(--first-color);
   font-size: 1rem;
   width: 450px;
-  background-color: var(--first-color);
 }
 
 .search_icon {
   position: absolute;
   left: 8px;
-  color: var(--second-color);
+  color: var(--first-color);
   font-size: 1.4rem;
-}
-
-.search_wrapper input[type='text']{
-  color: var(--second-color);
 }
 
 .search_wrapper button {
   background-color: transparent;
-  border: 1px solid var(--second-color);
+  border: 1px solid var(--first-color);
   margin-left: 20px;
   width: 40px;
   height: 40px;
-  background-color: var(--first-color);
 }
 
 .filter_icon {
-  color: var(--second-color);
+  color: var(--first-color);
 }
 
 .tickets_list,
 .tickets_list_mobile {
-  width: 80%;
+  width: 100%;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -111,7 +92,7 @@
 .cell_list {
   display: grid;
   grid-template-columns: 60px 1fr 2fr 1fr 120px;
-  padding: 5px 20px;
+  padding: 10px 20px;
   font-size: 1rem;
   color: var(--first-color);
   background-color: var(--second-color);
@@ -124,51 +105,11 @@
 .cell_list:first-child {
   font-weight: bold;
   border: none;
-  color: var(--second-color);
-  background-color: transparent;
   /* border-bottom: 2px solid var(--first-color); */
 }
 
-.cell_list span{
-  display: flex;
-  align-items: center;
+.cell_list span {
   padding: 4px 8px;
-  /* background-color: var(--second-color); */
-}
-
-span.normal{
-  background-color: var(--second-color);
-}
-
-.cell_list:first-child span {
-  background-color: var(--first-color);
-}
-
-.userpic{
-  background-color: var(--non-profile);
-  width: 30px;
-  height: 30px;
-  margin-right: 15px;
-  border-radius: 50%;
-  object-fit: cover;
-  overflow: hidden;
-}
-
-.ticket_color{
-  height: 15px;
-  border-radius: 50%;
-}
-
-.completed{
-    background-color: rgb(30, 207, 95);
-}
-
-.toDo{
-    background-color: rgb(48, 115, 241);
-}
-
-.inProgress{
-  background-color: rgb(249, 232, 84);
 }
 
 @media (max-width: 768px) {
@@ -178,7 +119,6 @@ span.normal{
     align-items: stretch;
     text-align: center;
     font-size: 1.5rem;
-    width: 100%;
   }
 
   .search_wrapper {
@@ -186,7 +126,6 @@ span.normal{
     align-items: stretch;
     gap: 0.5rem;
     width: 100%;
-    margin: 0 auto;
   }
 
   .search_wrapper input {
@@ -199,7 +138,7 @@ span.normal{
 
   .search_wrapper button {
     margin-left: 0;
-    /* align-self: flex-end; */
+    align-self: flex-end;
   }
 
   .nav_user button,
@@ -213,7 +152,6 @@ span.normal{
 
   .tickets_list_mobile {
     display: block;
-    width: 100%;
     padding: 10px;
   }
 
@@ -228,14 +166,11 @@ span.normal{
   .ticket_card p {
     margin: 5px 0px;
     font-size: 1rem;
-    background-color: var(--second-color);
     color: var(--first-color);
   }
 
   .ticket_card p strong {
     display: inline-block;
     width: 90px;
-    background-color: var(--second-color);
-    color: var(--first-color);
   }
 }
