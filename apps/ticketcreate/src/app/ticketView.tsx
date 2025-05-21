@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '../styles.css';
 import './ticketcreate.css'
 
-import { MdArrowBack, MdCreate, MdArrowDropDown } from "react-icons/md";
+import { MdArrowBack, MdCreate } from "react-icons/md";
 import { STATES, USERS } from './helpers'
 import Dropdown from '../components/dropdown/dropdown';
 

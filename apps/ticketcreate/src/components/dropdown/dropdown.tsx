@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, ReactNode, useMemo } from 'react';
+import { useState, useRef, useEffect, ReactNode } from 'react';
 import { MdArrowDropDown } from 'react-icons/md';
 import './dropdown.css'; // Asegúrate de tener este archivo
 
