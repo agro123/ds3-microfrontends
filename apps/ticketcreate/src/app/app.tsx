@@ -1,12 +1,10 @@
 // Uncomment this line to use CSS modules
 // import styles from './app.module.css';
-import NxWelcome from './nx-welcome';
+import TicketView from "./ticketView";
 
 export function App() {
   return (
-    <div>
-      <NxWelcome title="ticketcreate" />
-    </div>
+    <TicketView />
   );
 }
 
