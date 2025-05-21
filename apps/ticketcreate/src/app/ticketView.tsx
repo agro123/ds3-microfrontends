@@ -3,13 +3,26 @@ import '../styles.css';
 import './ticketcreate.css'
 
 import { MdArrowBack, MdCreate, MdArrowDropDown } from "react-icons/md";
-
+import { STATES, USERS } from './helpers'
 import Dropdown from '../components/dropdown/dropdown';
 
 
 const TicketView = () => {
-  const [description, setDescription] = useState('L');
-  const [comments, setComments] = useState('');
+  const [formValues, setFormValues] = useState<any>({
+    decription: 'Lorem ipsum',
+    comments: '',
+    assignedTo: 2,
+    status: 2
+  })
+
+
+  const onChange = (key: string) => (value: any) => {
+    setFormValues((curr: any) => ({
+      ...curr,
+      [key]: value
+    }))
+  }
+
   return (
     <div className="task-view">
       <div className="container">
@@ -39,8 +52,8 @@ const TicketView = () => {
               </div>
               <div className="input-container">
                 <textarea
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
+                  value={formValues.description}
+                  onChange={(e) => onChange('description')(e.target.value)}
                   className="text-input description-input"
                 />
               </div>
@@ -51,8 +64,8 @@ const TicketView = () => {
               <h3 className="section-title">Comments</h3>
               <div className="input-container">
                 <textarea
-                  value={comments}
-                  onChange={(e) => setComments(e.target.value)}
+                  value={formValues.comments}
+                  onChange={(e) => onChange('comments')(e.target.value)}
                   placeholder="Add a comment..."
                   className="text-input comments-input"
                 />
@@ -64,28 +77,29 @@ const TicketView = () => {
             {/* Assigned To */}
             <div className="assigned-section">
               <h3 className="section-title">Assigned to</h3>
-              <div className="dropdown-container">
-                <div className="dropdown-header">
-                  <span>2 members</span>
-                  <MdArrowDropDown className='icon' />
-                </div>
-                <div className="members-list">
-                  <div className="member-item">
-                    <div className="avatar"></div>
-                    <span className="member-name">User name</span>
-                  </div>
-                  <div className="member-item">
-                    <div className="avatar"></div>
-                    <span className="member-name">User name</span>
-                  </div>
-                </div>
-              </div>
+              <Dropdown
+                value={formValues.assignedTo}
+                onChange={onChange('assignedTo')}
+                options={USERS} 
+                customItem={(opt) => <div className="member-item">
+                    <img className="avatar" src={opt?.picture} alt="profile-picture" />
+                    <span className="member-name">{opt.label}</span>
+                  </div>} 
+              />
             </div>
 
             {/* Status */}
             <div className="status-section">
               <h3 className="section-title">Status</h3>
-              <Dropdown />
+              <Dropdown
+                value={formValues.status}
+                onChange={onChange('status')}
+                options={STATES} 
+                customItem={(opt) => <div className="status-display">
+                    <div className="status-dot" />
+                    <span className="member-name">{opt.label}</span>
+                  </div>}
+              />
             </div>
           </div>
         </div>

@@ -41,7 +41,7 @@
   top: 100%;
   left: 0;
   right: 0;
-  background-color: #ffffff27;
+  background-color: #000000a9;
   border-radius: 8px;
   z-index: 10;
 }
@@ -52,6 +52,6 @@
 }
 
 .dropdown-item:hover {
-  background-color: #606060;
+  background-color: #ffffff12;
   border-radius: 8px;
 }

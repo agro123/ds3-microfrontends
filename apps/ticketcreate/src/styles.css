@@ -157,7 +157,6 @@ body {
 .member-item {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
 }
 
 .avatar {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import NxWelcome from './nx-welcome';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 const Signin = React.lazy(() => import('signin/Module'));
 const Signup = React.lazy(() => import('signup/Module'));
