@@ -10,7 +10,7 @@ const Ticketcreate = React.lazy(() => import('ticketcreate/Module'));
 export function App() {
   return (
     <React.Suspense fallback={null}>
-      <ul>
+      {/* <ul>
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -26,7 +26,7 @@ export function App() {
         <li>
           <Link to="/ticketcreate">Ticketcreate</Link>
         </li>
-      </ul>
+      </ul> */}
       <Routes>
         <Route path="/" element={<NxWelcome title="shell" />} />
         <Route path="/signin" element={<Signin />} />

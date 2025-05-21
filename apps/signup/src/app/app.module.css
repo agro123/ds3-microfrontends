@@ -1,1 +1,115 @@
-/* Your styles goes here. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: #fbfbfb;
+    background:url('../assets/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 515px;
+    height: 100%;
+    max-height: 600px;
+    padding: 40px 50px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(251, 251, 251, .15);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+    border-radius: 32px;
+    gap: 30px;
+    font-weight: bold;
+}
+
+.container h1 {
+    color: #fbfbfb;
+    font-size: 3rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 8px;
+    gap: 28px;
+    font-weight: bold;
+}
+
+.login-form div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.login-form div label {
+    color: #fbfbfb;
+}
+
+.login-form div input {
+    all: unset;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px;
+    color: #fbfbfb;
+    border: 2px solid #fbfbfb;
+    border-radius: 8px;
+}
+
+.login-form div select {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 2px solid #fbfbfb;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #fbfbfb;
+}
+
+.login-form div select:focus {
+  outline: none;
+  color: rgba(35, 35, 35, .8);
+}
+
+.login-form div input::placeholder {
+    color: #fbfbfb;
+    opacity: 0.7;
+}
+
+.login-form button {
+    width: 100%;
+    height: 48px;
+    color: #fbfbfb;
+    background-color: #BE23CD;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 12px;
+}
+
+.container p {
+    display: flex;
+    gap: 4px;
+    font-weight: 500;
+}
+
+.container p a {
+    text-decoration: none;
+    color: #fbfbfb;
+    font-weight: bold;
+}
