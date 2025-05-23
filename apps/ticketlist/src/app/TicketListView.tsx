@@ -77,25 +77,28 @@ export function TicketListView() {
   ];
 
   return (
-    <>
-      <div className={styles.main}>
+    <div className={styles.main}>
         <div className={styles.nav_user}>
           <span>Welcome User name</span>
           <button>
-            <FaSignOutAlt
-              style={{ marginRight: '8px' }}
-              className={styles.signOut_icon}
-            />
-            <span>Sign out</span>
+              <a href='/signin'>
+                <FaSignOutAlt
+                  style={{ marginRight: '8px' }}
+                  className={styles.signOut_icon}
+                />
+                <span>Sign out</span>
+              </a>
           </button>
         </div>
         <div className={styles.nav_search}>
           <button>
-            <FaPlus
-              style={{ marginRight: '8px' }}
-              className={styles.faPlus_icon}
-            />
-            <span>Create</span>
+            <a href='/ticketcreate'>
+              <FaPlus
+                style={{ marginRight: '8px' }}
+                className={styles.faPlus_icon}
+              />
+              <span>Create</span>
+            </a>
           </button>
           <section className={styles.search_wrapper}>
             <FaSearch className={styles.search_icon} />
@@ -115,9 +118,9 @@ export function TicketListView() {
             <span>Date</span>
           </section>
           {tickets.map((e) => (
-            <section className={styles.cell_list}>
+            <section key={e.id} className={styles.cell_list}>
               <span className={styles.normal}>{e.id}</span>
-              <span className={styles.normal}>{e.title}</span>
+              <span className={styles.normal}><a href={'/ticketview/' + 12}>{e.title}</a></span>
               <span className={styles.normal}>
                 <img alt="" className={styles.userpic} />
                 {e.assigned}
@@ -165,7 +168,6 @@ export function TicketListView() {
           ))}
         </div>
       </div>
-    </>
   );
 }
 

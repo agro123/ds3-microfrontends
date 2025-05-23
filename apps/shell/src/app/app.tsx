@@ -1,5 +1,5 @@
 import * as React from 'react';
-import NxWelcome from './nx-welcome';
+import InitialView from './initial-view';
 import { Route, Routes } from 'react-router-dom';
 
 const Signin = React.lazy(() => import('signin/Module'));
@@ -28,11 +28,12 @@ export function App() {
         </li>
       </ul> */}
       <Routes>
-        <Route path="/" element={<NxWelcome title="shell" />} />
+        <Route path="/" element={<InitialView />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/ticketlist" element={<Ticketlist />} />
-        <Route path="/ticketcreate" element={<Ticketcreate />} />
+        <Route path="/ticketcreate/"element={<Ticketcreate />} />
+         <Route path="/ticketview/:id" element={<Ticketcreate />} />
       </Routes>
     </React.Suspense>
   );

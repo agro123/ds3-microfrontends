@@ -6,10 +6,15 @@ import TicketCreate from "./ticketCreate";
 import '../styles.css';
 import './ticketcreate.css'
 
+import { useParams } from "react-router-dom";
+
 export function App() {
-  {/* <TicketView /> */}
+  const { id } = useParams();
+
+  if(id)
+    return <TicketView id={id} /> 
+
   return (
-    
     <TicketCreate />
   );
 }

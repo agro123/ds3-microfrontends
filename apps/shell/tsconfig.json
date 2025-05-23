@@ -3,22 +3,22 @@
   "include": [],
   "references": [
     {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
-    },
-    {
-      "path": "../signin"
-    },
-    {
-      "path": "../signup"
+      "path": "../ticketcreate"
     },
     {
       "path": "../ticketlist"
     },
     {
-      "path": "../ticketcreate"
+      "path": "../signup"
+    },
+    {
+      "path": "../signin"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
     }
   ],
   "extends": "../../tsconfig.base.json"

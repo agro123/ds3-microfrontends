@@ -1,12 +1,15 @@
 import { useState } from 'react';
 
-import { MdArrowBack, MdCreate } from "react-icons/md";
+import { MdArrowBack } from "react-icons/md";
 import { STATES, USERS } from './helpers'
 import Dropdown from '../components/dropdown/dropdown';
+import { useNavigate } from 'react-router-dom';
 
 
 const TicketCreate = () => {
-const [formValues, setFormValues] = useState<any>({
+  const navigate = useNavigate();
+
+  const [formValues, setFormValues] = useState<any>({
     decription: '',
     comments: '',
     assignedTo: null,
@@ -26,11 +29,11 @@ const [formValues, setFormValues] = useState<any>({
       <div className="container">
         {/* Header */}
         <div className="header">
-          <button className="back-button">
-            <MdArrowBack className="icon"/>
+          <button className="back-button" onClick={() => navigate('/ticketlist')}>
+              <MdArrowBack className="icon"/>
           </button>
           <h1 className="page-title">Creating new Task</h1>
-          <button className="apply-button">Create</button>
+          <button className="apply-button" onClick={() => navigate('/ticketlist')}>Create</button>
         </div>
 
         <div className="content">

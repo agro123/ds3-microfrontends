@@ -31,16 +31,16 @@
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
   "references": [
     {
-      "path": "../signin/tsconfig.app.json"
-    },
-    {
-      "path": "../signup/tsconfig.app.json"
+      "path": "../ticketcreate/tsconfig.app.json"
     },
     {
       "path": "../ticketlist/tsconfig.app.json"
     },
     {
-      "path": "../ticketcreate/tsconfig.app.json"
+      "path": "../signup/tsconfig.app.json"
+    },
+    {
+      "path": "../signin/tsconfig.app.json"
     }
   ]
 }

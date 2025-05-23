@@ -1,18 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { MdArrowBack, MdCreate } from "react-icons/md";
 import { STATES, USERS } from './helpers'
 import Dropdown from '../components/dropdown/dropdown';
+import { useNavigate } from 'react-router-dom';
 
 
-const TicketView = () => {
+const TicketView = ({id}: {id: string}) => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log('id: ', id)
+  }, [id])
+  
   const [formValues, setFormValues] = useState<any>({
     decription: 'Lorem ipsum',
     comments: '',
     assignedTo: 2,
     status: 2
   })
-
 
   const onChange = (key: string) => (value: any) => {
     setFormValues((curr: any) => ({
@@ -26,7 +32,7 @@ const TicketView = () => {
       <div className="container">
         {/* Header */}
         <div className="header">
-          <button className="back-button">
+          <button className="back-button" onClick={() => navigate('/ticketlist')}>
             <MdArrowBack className="icon"/>
           </button>
           <h1 className="page-title">Task View</h1>
@@ -44,7 +50,7 @@ const TicketView = () => {
             <div className="description-section">
               <div className="section-header">
                 <h3 className="section-title">Description</h3>
-                <button className="edit-button">
+                <button className="edit-button" onClick={() => navigate('/ticketlist')}>
                   <MdCreate className="icon-small"/>
                 </button>
               </div>
