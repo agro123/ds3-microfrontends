@@ -26,7 +26,7 @@ export const USERS = [
     },
     {
         key: 3,
-        label: 'Jhan Cardenas',
+        label: 'Jhan Perez',
         picture: 'https://randomuser.me/api/portraits/men/78.jpg'
     }
 ]
