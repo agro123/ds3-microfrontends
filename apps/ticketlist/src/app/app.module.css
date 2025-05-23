@@ -239,3 +239,9 @@ span.normal{
     color: var(--first-color);
   }
 }
+
+a {
+    text-decoration: none; 
+    color: inherit;
+    background-color: transparent;
+}

@@ -1,0 +1,56 @@
+.bg-dark {
+  background-color: #000 !important;
+}
+
+.btn-purple {
+  background-color: #b026ff;
+  color: white;
+  border: none;
+}
+
+.btn-purple:hover {
+  background-color: #9b00ff;
+  color: white;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  background-color: transparent;
+  color: white;
+}
+
+.form-control::placeholder {
+  color: #6c757d;
+}
+
+.avatar-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #6c757d;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #0d6efd;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Override Bootstrap's default focus styles */
+.btn:focus,
+.form-control:focus {
+  box-shadow: none;
+}
+
+/* Make sure textareas have transparent background */
+textarea.bg-transparent {
+  background-color: transparent !important;
+}
+.status-section{
+  margin-top: 12px;
+}

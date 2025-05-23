@@ -1,12 +1,17 @@
 // Uncomment this line to use CSS modules
 // import styles from './app.module.css';
 import styles from './app.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function App() {
+  const navigate = useNavigate();
+  const onSubmit = () => {
+    navigate('/ticketlist');
+  }
   return (
     <div className={styles.container}>
       <h1>Log In</h1>
-      <form className={styles['login-form']}>
+      <form className={styles['login-form']} onSubmit={onSubmit}>
         <div>
           <label htmlFor="username">Username</label>
           <input

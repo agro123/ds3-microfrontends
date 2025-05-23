@@ -13,10 +13,10 @@
       "path": "./apps/signup"
     },
     {
-      "path": "./apps/ticketlist"
+      "path": "./apps/ticketcreate"
     },
     {
-      "path": "./apps/ticketcreate"
+      "path": "./apps/ticketlist"
     }
   ]
 }

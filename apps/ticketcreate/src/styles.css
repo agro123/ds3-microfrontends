@@ -1,1 +1,190 @@
-/* You can add global styles to this file, and also import other style files */
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+}
+
+/* Task view container */
+.task-view {
+  background-color: #060010;
+  color: #ffffff;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  min-width: 500px;
+  /* margin: 0 auto;*/
+  padding: 24px 16px;
+  width: 1200px;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.apply-button {
+  background-color: #b033c6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.apply-button:hover {
+  background-color: #9b00ff;
+}
+
+/* Content layout */
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .main-content {
+    flex: 2;
+  }
+
+  .sidebar {
+    flex: 1;
+  }
+}
+
+/* Main content styles */
+.main-content {
+  margin-bottom: 24px;
+}
+
+.task-title-section {
+  margin-bottom: 24px;
+}
+
+.task-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.input-container {
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.text-input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  resize: none;
+  outline: none;
+}
+
+textarea {
+  height: 120px;
+}
+
+.comments-input {
+  height: 180px;
+}
+
+.text-input::placeholder {
+  color: #666666;
+}
+
+.members-list {
+  margin-top: 16px;
+}
+
+.member-item {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #666666;
+  margin-right: 12px;
+}
+
+.status-display {
+  display: flex;
+  align-items: center;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #0d6efd;
+  margin-right: 12px;
+}
+
+/* Icon styles */
+.icon {
+  font-size: 24px;
+}
+
+.icon-small {
+  font-size: 20px;
+}
