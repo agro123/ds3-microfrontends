@@ -1,13 +1,26 @@
 import { useState } from 'react';
-import '../styles.css';
-import './ticketcreate.css'
 
-import { MdArrowBack, MdCreate, MdArrowDropDown } from "react-icons/md";
+import { MdArrowBack, MdCreate } from "react-icons/md";
+import { STATES, USERS } from './helpers'
+import Dropdown from '../components/dropdown/dropdown';
 
 
 const TicketCreate = () => {
-  const [description, setDescription] = useState('L');
-  const [comments, setComments] = useState('');
+const [formValues, setFormValues] = useState<any>({
+    decription: '',
+    comments: '',
+    assignedTo: null,
+    status: null
+  })
+
+
+  const onChange = (key: string) => (value: any) => {
+    setFormValues((curr: any) => ({
+      ...curr,
+      [key]: value
+    }))
+  }
+
   return (
     <div className="task-view">
       <div className="container">
@@ -16,80 +29,83 @@ const TicketCreate = () => {
           <button className="back-button">
             <MdArrowBack className="icon"/>
           </button>
-          <h1 className="page-title">Task: Task title</h1>
-          <button className="apply-button">Apply Changes</button>
+          <h1 className="page-title">Creating new Task</h1>
+          <button className="apply-button">Create</button>
         </div>
 
         <div className="content">
           <div className="main-content">
-            {/* Task Title */}
+            {/*Title */}
             <div className="task-title-section">
-              <h2 className="task-title">Title</h2>
-            </div>
-
-            {/* Description */}
-            <div className="description-section">
               <div className="section-header">
-                <h3 className="section-title">Description</h3>
-                <button className="edit-button">
-                  <MdCreate className="icon-small"/>
-                </button>
+                <h3 className="section-title">Title</h3>
               </div>
               <div className="input-container">
-                <textarea
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  className="text-input description-input"
+                <input
+                  value={formValues.title}
+                  onChange={(e) => onChange('title')(e.target.value)}
+                  className="text-input"
+                  placeholder="Add a title..."
                 />
               </div>
             </div>
 
-            {/* Comments */}
-            <div className="comments-section">
-              <h3 className="section-title">Comments</h3>
+            {/* Link GitHub */}
+            <div >
+              <div className="section-header">
+                <h3 className="section-title">Link Github</h3>
+              </div>
               <div className="input-container">
-                <textarea
-                  value={comments}
-                  onChange={(e) => setComments(e.target.value)}
-                  placeholder="Add a comment..."
-                  className="text-input comments-input"
+                <input
+                  value={formValues.linkgh}
+                  onChange={(e) => onChange('linkgh')(e.target.value)}
+                  className="text-input"
+                  placeholder="Add link from github..."
                 />
               </div>
             </div>
-          </div>
-
-          <div className="sidebar">
-            {/* Assigned To */}
-            <div className="assigned-section">
-              <h3 className="section-title">Assigned to</h3>
-              <div className="dropdown-container">
-                <div className="dropdown-header">
-                  <span>2 members</span>
-                  <MdArrowDropDown className='icon' />
+            <div className='content'>
+                {/* description */}
+              <div className='main-content'>
+                <div className="section-header">
+                  <h3 className="section-title">Description</h3>
                 </div>
-                <div className="members-list">
-                  <div className="member-item">
-                    <div className="avatar"></div>
-                    <span className="member-name">User name</span>
-                  </div>
-                  <div className="member-item">
-                    <div className="avatar"></div>
-                    <span className="member-name">User name</span>
-                  </div>
+                <div className="input-container">
+                  <textarea
+                    value={formValues.description}
+                    onChange={(e) => onChange('description')(e.target.value)}
+                    className="text-input"
+                    placeholder="Add a description..."
+                  />
                 </div>
               </div>
-            </div>
+              <div className="sidebar">
+                {/* Assigned To */}
+                <div className="assigned-section">
+                  <h3 className="section-title">Assigned to</h3>
+                  <Dropdown
+                    value={formValues.assignedTo}
+                    onChange={onChange('assignedTo')}
+                    options={USERS} 
+                    customItem={(opt) => <div className="member-item">
+                        <img className="avatar" src={opt?.picture} alt="profile-picture" />
+                        <span className="member-name">{opt.label}</span>
+                      </div>} 
+                  />
+                </div>
 
-            {/* Status */}
-            <div className="status-section">
-              <h3 className="section-title">Status</h3>
-              <div className="dropdown-container">
-                <div className="dropdown-header">
-                  <div className="status-display">
-                    <div className="status-dot"></div>
-                    <span>To do</span>
-                  </div>
-                    <MdArrowDropDown className="icon"/>
+                {/* Status */}
+                <div className="status-section">
+                  <h3 className="section-title">Status</h3>
+                  <Dropdown
+                    value={formValues.status}
+                    onChange={onChange('status')}
+                    options={STATES} 
+                    customItem={(opt) => <div className="status-display">
+                        <div className="status-dot" />
+                        <span className="member-name">{opt.label}</span>
+                      </div>}
+                  />
                 </div>
               </div>
             </div>

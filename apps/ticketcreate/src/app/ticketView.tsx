@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import '../styles.css';
-import './ticketcreate.css'
 
 import { MdArrowBack, MdCreate } from "react-icons/md";
 import { STATES, USERS } from './helpers'

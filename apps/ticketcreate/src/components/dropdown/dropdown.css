@@ -1,10 +1,11 @@
 .dropdown-container {
   border: 1px solid #333;
   border-radius: 8px;
-  width: 300px;
+  width: 100%;
   position: relative;
   background: transparent;
   font-family: sans-serif;
+  margin-bottom: 24px;
 }
 
 .dropdown-header {

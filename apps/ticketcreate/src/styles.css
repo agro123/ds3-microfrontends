@@ -138,7 +138,7 @@ body {
   outline: none;
 }
 
-.description-input {
+textarea {
   height: 120px;
 }
 
